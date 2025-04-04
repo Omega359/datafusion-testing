@@ -13764,10 +13764,13 @@ SELECT ALL - CAST ( + col0 AS INTEGER ) + + 82 FROM tab0 AS cor0
 -5
 67
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-2299
 SELECT ALL + AVG ( DISTINCT - + CAST ( NULL AS INTEGER ) ) AS col0 FROM tab1 cor0 CROSS JOIN tab0 AS cor1
+----
+NULL
 
 query I rowsort
 SELECT DISTINCT - col0 AS col0 FROM tab1 AS cor0 WHERE ( NULL ) IS NULL
@@ -17941,7 +17944,7 @@ SELECT ALL * FROM tab2 WHERE ( 2 ) BETWEEN + col0 AND ( + 41 )
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT AVG ( DISTINCT - 83 ) AS col2 FROM tab1 WHERE - + col2 >= ( + col2 + - 58 )
 
 # Datafusion - Datafusion expected results:
@@ -45110,10 +45113,13 @@ query III rowsort
 SELECT * FROM tab1 AS cor0 WHERE col0 > NULL
 ----
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-7510
 SELECT + CAST ( NULL AS INTEGER ) * AVG ( DISTINCT - - col2 ) - + 66 FROM tab0
+----
+NULL
 
 query III rowsort
 SELECT DISTINCT * FROM tab2 WHERE ( + 25 * ( + col1 ) ) IS NOT NULL
@@ -50779,10 +50785,13 @@ SELECT col2 * + - col1 FROM tab0 AS cor0
 -3807
 -99
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-8460
 SELECT + AVG ( DISTINCT - CAST ( NULL AS INTEGER ) ) AS col1 FROM tab1 AS cor0
+----
+NULL
 
 query I rowsort
 SELECT - ( - col1 ) * 7 * - col2 * - col2 AS col2 FROM tab1
@@ -52847,10 +52856,13 @@ SELECT DISTINCT - 95 * + col1 + col1 col2 FROM tab2
 -6298
 -7238
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort
 SELECT DISTINCT ( AVG ( DISTINCT 30 ) ) col0 FROM tab0 WHERE NULL NOT IN ( + 20 )
+----
+NULL
 
 query I rowsort label-8804
 SELECT COUNT ( * ) AS col2 FROM tab0 WHERE ( NULL ) NOT BETWEEN NULL AND - col0
@@ -54924,10 +54936,13 @@ SELECT DISTINCT - CAST ( + - 68 AS INTEGER ) + - 80 FROM tab1
 ----
 -12
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-9159
 SELECT ALL - CAST ( NULL AS INTEGER ) / + AVG ( DISTINCT - - col2 ) col1 FROM tab2
+----
+NULL
 
 query I rowsort label-9160
 SELECT + + COUNT ( * ) FROM tab0 WHERE 79 * + + 49 > NULL

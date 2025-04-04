@@ -3457,10 +3457,13 @@ SELECT ALL col0 * + + 22 AS col0 FROM tab2
 1408
 1650
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-563
 SELECT AVG ( DISTINCT + CAST ( NULL AS INTEGER ) ) / CAST ( - + 77 AS INTEGER ) + - 47 AS col1 FROM tab1
+----
+NULL
 
 query II rowsort label-564
 SELECT ALL + COUNT ( * ) AS col2, 38 AS col0 FROM tab1
@@ -6018,7 +6021,7 @@ SELECT DISTINCT + col1 + col0 * + + col0 FROM tab0 cor0
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT DISTINCT ( - AVG ( DISTINCT + 59 ) ) AS col0 FROM tab0 AS cor0 WHERE 56 BETWEEN + - col1 * col2 * col1 + - col0 + - col1 * - - 13 + - col2 + - col1 + + 97 AND NULL
 
 query I rowsort label-992
@@ -10271,10 +10274,13 @@ query III rowsort
 SELECT * FROM tab0 AS cor0 WHERE ( NULL ) BETWEEN col0 AND ( NULL )
 ----
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-1698
 SELECT ALL + + CAST ( NULL AS FLOAT8 ) + COUNT ( * ) * - + 78 * AVG ( DISTINCT + 97 ) AS col0 FROM tab0 AS cor0
+----
+NULL
 
 query I rowsort
 SELECT ALL 26 + + col2 FROM tab1 AS cor0 WHERE NOT NULL = NULL
@@ -14374,7 +14380,7 @@ NULL
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(3\) must match number of fields\(4\) in schema
 SELECT DISTINCT + + 8 * COUNT ( col2 ) * - CAST ( + - AVG ( DISTINCT + 87 ) AS INTEGER ) * - + COUNT ( * ) FROM tab1 WHERE NOT - - 0 * + - 16 < col0
 
 query III rowsort
@@ -21815,10 +21821,13 @@ SELECT DISTINCT col0 * + + 50 * + + CAST ( NULL AS FLOAT8 ) AS col1 FROM tab2
 ----
 NULL
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-3603
 SELECT - AVG ( DISTINCT - 60 ) + CAST ( NULL AS INTEGER ) FROM tab0
+----
+NULL
 
 query I rowsort label-3604
 SELECT 48 + - COUNT ( * ) col2 FROM tab0
@@ -33867,7 +33876,7 @@ SELECT ALL * FROM tab2 WHERE NOT NULL >= ( 41 )
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT ALL - AVG ( DISTINCT 26 ) FROM tab1 WHERE NOT col1 > ( CAST ( NULL AS INTEGER ) )
 
 query I rowsort label-5592

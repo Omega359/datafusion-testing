@@ -28983,27 +28983,27 @@ SELECT ALL + + col0 AS col1 FROM tab4 WHERE NOT NULL NOT BETWEEN NULL AND NULL
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT DISTINCT - + AVG ( DISTINCT + - 24 ) FROM tab0 WHERE NOT - + col3 IS NOT NULL
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT DISTINCT - + AVG ( DISTINCT + - 24 ) FROM tab1 WHERE NOT - + col3 IS NOT NULL
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT DISTINCT - + AVG ( DISTINCT + - 24 ) FROM tab2 WHERE NOT - + col3 IS NOT NULL
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT DISTINCT - + AVG ( DISTINCT + - 24 ) FROM tab3 WHERE NOT - + col3 IS NOT NULL
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT DISTINCT - + AVG ( DISTINCT + - 24 ) FROM tab4 WHERE NOT - + col3 IS NOT NULL
 
 # Datafusion - Types were automatically converted from:
@@ -48126,30 +48126,45 @@ query R rowsort label-7905
 SELECT ALL - col4 AS col1 FROM tab4 AS cor0 WHERE ( NULL ) IS NOT NULL
 ----
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-7910
 SELECT ALL - AVG ( DISTINCT + - 87 ) FROM tab0 WHERE NULL IS NOT NULL
+----
+NULL
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-7910
 SELECT ALL - AVG ( DISTINCT + - 87 ) FROM tab1 WHERE NULL IS NOT NULL
+----
+NULL
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-7910
 SELECT ALL - AVG ( DISTINCT + - 87 ) FROM tab2 WHERE NULL IS NOT NULL
+----
+NULL
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-7910
 SELECT ALL - AVG ( DISTINCT + - 87 ) FROM tab3 WHERE NULL IS NOT NULL
+----
+NULL
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-7910
 SELECT ALL - AVG ( DISTINCT + - 87 ) FROM tab4 WHERE NULL IS NOT NULL
+----
+NULL
 
 query I rowsort label-7915
 SELECT DISTINCT - col0 FROM tab0 WHERE + col0 IS NULL

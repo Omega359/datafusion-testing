@@ -15855,10 +15855,13 @@ query I rowsort
 SELECT ALL + ( + - col2 ) FROM tab0 WHERE NOT NULL BETWEEN - col0 AND 11
 ----
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-2614
 SELECT + 65 * - + 78 + - 55 - + COUNT ( * ) * + AVG ( DISTINCT - col1 ) AS col1 FROM tab0 AS cor0 WHERE NOT ( NULL ) IS NULL
+----
+NULL
 
 query I rowsort label-2615
 SELECT + COUNT ( DISTINCT col1 ) FROM tab2 cor0
@@ -17590,7 +17593,7 @@ SELECT DISTINCT - + col1 + - + 0 FROM tab2 AS cor0
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(2\) must match number of fields\(3\) in schema
 SELECT ( + COUNT ( * ) ) * - AVG ( DISTINCT + col0 ) AS col2 FROM tab1 WHERE - ( - + col0 ) IN ( - + col1 * col2 )
 
 query I rowsort
@@ -56968,10 +56971,13 @@ SELECT - - 26 AS col1 FROM tab1 AS cor0
 26
 26
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-9410
 SELECT ALL - AVG ( DISTINCT CAST ( NULL AS INTEGER ) ) AS col2 FROM ( tab0 AS cor0 CROSS JOIN tab1 AS cor1 )
+----
+NULL
 
 query II rowsort
 SELECT ALL 39 AS col0, - 75 AS col2 FROM tab1
@@ -57950,10 +57956,13 @@ query I rowsort
 SELECT + + col1 AS col1 FROM tab1 AS cor0 WHERE - col2 = NULL
 ----
 
-# Datafusion - Datafusion expected results:
-# Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+# Datafusion - Types were automatically converted from:
+# Datafusion - [Expected] [I]
+# Datafusion - [Actual  ] [R]
+query R rowsort label-9572
 SELECT DISTINCT CAST ( NULL AS INTEGER ) + - CAST ( - + MIN ( ALL + - 33 ) AS INTEGER ) * + - AVG ( DISTINCT - 12 ) col1 FROM tab1
+----
+NULL
 
 query I rowsort label-9573
 SELECT ALL + COUNT ( * ) + + MAX ( + 6 ) FROM tab1

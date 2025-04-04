@@ -36568,27 +36568,27 @@ SELECT * FROM tab4 WHERE NOT + 77 - 6 IS NOT NULL
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT AVG ( DISTINCT - 54 ) col0 FROM tab0 WHERE 55 IN ( col1 * + 36 + + 75 )
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT AVG ( DISTINCT - 54 ) col0 FROM tab1 WHERE 55 IN ( col1 * + 36 + + 75 )
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT AVG ( DISTINCT - 54 ) col0 FROM tab2 WHERE 55 IN ( col1 * + 36 + + 75 )
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT AVG ( DISTINCT - 54 ) col0 FROM tab3 WHERE 55 IN ( col1 * + 36 + + 75 )
 
 # Datafusion - Datafusion expected results:
 # Datafusion - Expected - NULL
-query error DataFusion error: Execution error: avg\(DISTINCT\) aggregations are not available
+query error DataFusion error: Arrow error: Invalid argument error: number of columns\(1\) must match number of fields\(2\) in schema
 SELECT AVG ( DISTINCT - 54 ) col0 FROM tab4 WHERE 55 IN ( col1 * + 36 + + 75 )
 
 # Postgresql - Postgres error: db error: ERROR: operator does not exist: + text
